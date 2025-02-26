@@ -2,7 +2,7 @@
 if NOT defined _NTPOSTBLD echo Run from a razzle prompt.&goto :eof
 
 rem point to retail iso
-set _RTLISO=G:
+set /p _RTLISO="Drive letter from your mounted Windows Server 2003 image: "
 
 @rem /// pidgen, the version used will decide product keys you can use ///
 if not exist "%_NTPOSTBLD%\pidgen.dll" copy /Y /B "%_RTLISO%\I386\pidgen.dll" "%_NTPOSTBLD%\"

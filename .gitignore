@@ -8,6 +8,7 @@ BuildName.txt
 **/obj
 **/*.log
 tools/*/*.pdb
+tools/x86/managed/urt/v1.0.3705/config/*
 
 publish.log
 
