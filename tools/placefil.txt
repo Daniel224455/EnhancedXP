@@ -9680,6 +9680,12 @@ lucon.ttf        retail
 lug.chm          retail
 luna.mst         retail    ; luna visual style
 luna.the         retail    ; luna theme
+zune.mst         retail    ; zune visual style
+zune.the         retail    ; zune theme
+embedded.mst     retail    ; embedded posready visual style
+embedded.the     retail    ; embedded posready theme
+royale.mst       retail    ; royale visual style
+royale.the       retail    ; royale theme
 lusrmgr.msc      retail
 lvcam.inf        retail
 lvcam.sys        retail

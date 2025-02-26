@@ -302,6 +302,10 @@ Environment:
 
     This routine may be called more than once, and should not be marked INIT.
 
+Note:
+
+    Daniel224455; SKU Text popup routine has been REMOVED. LH BootSplash was added.    
+
 --*/
 
 {
@@ -330,19 +334,19 @@ Environment:
         if (SharedUserData->NtProductType == NtProductWinNt) {
 
             InbvSetTextColor(COLOR_WHITE);
-            InbvSolidColorFill(0, 0,  639, 479, 7); // background
-            InbvSolidColorFill(0, 421,  639, 479, 1); // bottom
+            InbvSolidColorFill(0, 0,  0, 0, 0); // background
+            InbvSolidColorFill(0, 0,  0, 0, 0); // bottom
 
             BitmapTop = InbvGetResourceAddress(6);
             BitmapBottom = InbvGetResourceAddress(7);
         } else { // srv
 
-            InbvSetTextColor(14);
-            InbvSolidColorFill(0, 0,  639, 479, 6); // background
-            InbvSolidColorFill(0, 421,  639, 479, 1); // bottom
+            InbvSetTextColor(COLOR_WHITE);
+            InbvSolidColorFill(0, 0,  0, 0, 0); // background
+            InbvSolidColorFill(0, 0,  0, 0, 0); // bottom
 
-            BitmapTop = InbvGetResourceAddress(14);
-            BitmapBottom = InbvGetResourceAddress(15);
+            BitmapTop = InbvGetResourceAddress(6);
+            BitmapBottom = InbvGetResourceAddress(7);
         }
 
         TempRotBarSelection = RB_UNSPECIFIED;
@@ -371,32 +375,27 @@ Environment:
         Bitmap = InbvGetResourceAddress(1);  // workstation bitmap
 
         if (ExVerifySuite(EmbeddedNT)) { // embd and pro have the same bar, but different text
-            TextBitmap = InbvGetResourceAddress(12); // embedded edition title text
-            BarBitmap = InbvGetResourceAddress(8); // pro and embedded editions progress bar
+            BarBitmap = InbvGetResourceAddress(4); // pro and embedded editions progress bar
         }
         else if (SharedUserData->NtProductType == NtProductWinNt) { // home or pro
         
             if (ExVerifySuite(Personal)) { // home
-                BarBitmap = InbvGetResourceAddress(9); // home edition progress bar
-                TextBitmap = InbvGetResourceAddress(11); // home edition title text
+                BarBitmap = InbvGetResourceAddress(4); // home edition progress bar
             }
             else { // pro
-                BarBitmap = InbvGetResourceAddress(8); // pro and embedded editions progress bar
+                BarBitmap = InbvGetResourceAddress(4); // pro and embedded editions progress bar
                 switch (CmBrand) {
                 case 1: // TabletPc
-                    TextBitmap = InbvGetResourceAddress(17);
                     break;
                 case 2: // eHome Freestyle
-                    TextBitmap = InbvGetResourceAddress(18);
                     break;
                 default: // Professional title text
-                    TextBitmap = InbvGetResourceAddress(10);
+                    break;
                 }
             }
         }
         else { // srv
             BarBitmap = InbvGetResourceAddress(4); // srv edition progress bar
-            LogoBitmap = InbvGetResourceAddress(13); // srv edition logo and title
         }
         
         if (Bitmap) {

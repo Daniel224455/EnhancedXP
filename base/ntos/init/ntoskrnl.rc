@@ -24,24 +24,3 @@
 
 6 BITMAP DISCARDABLE "top.bmp"
 7 BITMAP DISCARDABLE "bottom.bmp"
-
-8 BITMAP DISCARDABLE "probar.bmp"
-9 BITMAP DISCARDABLE "homebar.bmp"
-
-#ifdef _WIN64
-10 BITMAP DISCARDABLE "protext64.bmp"
-#else
-10 BITMAP DISCARDABLE "protext.bmp"
-#endif
-11 BITMAP DISCARDABLE "hometext.bmp"
-
-12 BITMAP DISCARDABLE "embtext.bmp"
-
-13 BITMAP DISCARDABLE "srvlogo.bmp"
-
-14 BITMAP DISCARDABLE "srvtop.bmp"
-15 BITMAP DISCARDABLE "srvbott.bmp"
-
-17 BITMAP DISCARDABLE "tpctext.bmp"
-18 BITMAP DISCARDABLE "fstltext.bmp"
-

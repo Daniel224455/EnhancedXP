@@ -5,7 +5,7 @@
 #define LOGON__Logon_h__INCLUDED
 #pragma once
 
-//#define ANIMATE_FLAG
+#define ANIMATE_FLAG
 
 // Forward declarations
 class LogonAccount;
@@ -13,8 +13,8 @@ class LogonAccount;
 enum EFadeDirection;
 #endif
 
-#define MAX_FLAG_FRAMES 1
-#define FLAG_ANIMATION_COUNT 1
+#define MAX_FLAG_FRAMES 50
+#define FLAG_ANIMATION_COUNT 3
 
 class LogonFrame: public HWNDElement, public IElementListener
 {
